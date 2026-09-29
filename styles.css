@@ -3,6 +3,9 @@
   --fg: #f5f5f5;
   --accent: #e0e0e0;
   --dot-inactive: rgba(245, 245, 245, 0.3);
+  --line: rgba(245, 245, 245, 0.15);
+  --nav-h: 64px;
+  --gutter: clamp(20px, 6vw, 96px);
 }
 
 * {
@@ -20,11 +23,72 @@ html, body {
   font-family: -apple-system, "Pretendard", "Apple SD Gothic Neo", sans-serif;
 }
 
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  height: calc(var(--nav-h) + env(safe-area-inset-top, 0px));
+  padding: env(safe-area-inset-top, 0px) var(--gutter) 0;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-home {
+  flex: none;
+  min-height: 44px;
+  font-weight: 700;
+  font-size: clamp(15px, 1.8vw, 18px);
+  white-space: nowrap;
+}
+
+.nav-list {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: clamp(4px, 1.5vw, 20px);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-list::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-item {
+  flex: none;
+  min-height: 44px;
+  padding: 0 clamp(8px, 1.2vw, 16px);
+  font-size: clamp(14px, 1.6vw, 17px);
+  white-space: nowrap;
+  opacity: 0.55;
+  border-bottom: 2px solid transparent;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.nav-item.active {
+  opacity: 1;
+  border-bottom-color: var(--fg);
+}
+
 #pager {
   display: flex;
   flex-direction: row;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow-x: scroll;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
@@ -37,27 +101,50 @@ html, body {
 }
 
 .section {
-  flex: 0 0 100vw;
-  width: 100vw;
-  height: 100vh;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  padding: 8vh 8vw 12vh;
+  padding:
+    calc(var(--nav-h) + env(safe-area-inset-top, 0px) + clamp(24px, 6vh, 64px))
+    var(--gutter)
+    calc(clamp(56px, 10vh, 96px) + env(safe-area-inset-bottom, 0px));
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .section::-webkit-scrollbar {
   display: none;
 }
 
+.content {
+  margin-block: auto;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.index {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
 .section h2 {
   font-size: clamp(28px, 5vw, 56px);
   margin: 0 0 24px;
   font-weight: 700;
+  text-wrap: balance;
+}
+
+.section h3 {
+  font-size: clamp(20px, 3vw, 32px);
+  margin: 48px 0 16px;
+  font-weight: 600;
 }
 
 .section p {
@@ -67,20 +154,16 @@ html, body {
   max-width: 70ch;
 }
 
-.section .index {
-  position: absolute;
-  top: 5vh;
-  left: 8vw;
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  opacity: 0.5;
+.section img {
+  max-width: 100%;
+  height: auto;
 }
 
 #dots {
   position: fixed;
-  bottom: 4vh;
+  bottom: calc(2.5vh + env(safe-area-inset-bottom, 0px));
   left: 0;
-  width: 100vw;
+  right: 0;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -103,13 +186,4 @@ html, body {
 .dot.active {
   background: var(--fg);
   transform: scale(1.3);
-}
-
-.hint {
-  position: fixed;
-  bottom: 4vh;
-  right: 5vw;
-  font-size: 13px;
-  opacity: 0.4;
-  z-index: 10;
 }

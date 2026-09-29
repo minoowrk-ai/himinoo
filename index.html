@@ -12,50 +12,63 @@
 </head>
 <body>
 
+<nav id="nav" aria-label="섹션 이동"></nav>
+
 <div id="pager">
   <section class="section" data-label="Cover">
-    <h2>작품 이름</h2>
-    <p>한 줄 소개가 들어갑니다. 좌우로 스와이프해서 다음 섹션으로 이동하세요.</p>
+    <div class="content">
+      <h2>작품 이름</h2>
+      <p>한 줄 소개가 들어갑니다. 좌우로 스와이프하거나 상단 메뉴를 눌러 이동하세요.</p>
+    </div>
   </section>
 
-  <section class="section" data-label="Background">
-    <h2>배경 / 문제</h2>
-    <p>이 제품을 왜 만들었는지, 어떤 문제를 풀려고 했는지 설명합니다. 내용이 길어지면 이 영역 안에서 위아래로 스크롤할 수 있습니다.</p>
+  <section class="section" data-label="Background" data-nav="배경/문제">
+    <div class="content">
+      <h2>배경 / 문제</h2>
+      <p>이 제품을 왜 만들었는지, 어떤 문제를 풀려고 했는지 설명합니다. 내용이 길어지면 이 영역 안에서 위아래로 스크롤할 수 있습니다.</p>
+    </div>
   </section>
 
-  <section class="section" data-label="Final Result">
-    <h2>최종 결과물</h2>
-    <p>완성품 사진과 스펙(크기, 재료, 컬러)이 들어갑니다.</p>
+  <section class="section" data-label="Final Result" data-nav="최종 결과물">
+    <div class="content">
+      <h2>최종 결과물</h2>
+      <p>완성품 사진과 스펙(크기, 재료, 컬러)이 들어갑니다.</p>
+    </div>
   </section>
 
-  <section class="section" data-label="Branding">
-    <h2>브랜딩</h2>
-    <p>브랜드 네임, 로고, 컬러, 패키지 등을 소개합니다.</p>
+  <section class="section" data-label="Branding" data-nav="브랜딩">
+    <div class="content">
+      <h2>브랜딩</h2>
+      <p>브랜드 네임, 로고, 컬러, 패키지 등을 소개합니다.</p>
+    </div>
   </section>
 
-  <section class="section" data-label="UX">
-    <h2>UX</h2>
-    <p>사용 시나리오와 사용자 경험을 소개합니다.</p>
+  <section class="section" data-label="UX" data-nav="UX">
+    <div class="content">
+      <h2>UX</h2>
+      <p>사용 시나리오와 사용자 경험을 소개합니다.</p>
+    </div>
   </section>
 
-  <section class="section" data-label="Closing">
-    <h2>마무리</h2>
-    <p>작가 소개와 연락처, 감사 문구가 들어갑니다.</p>
+  <section class="section" data-label="Closing" data-nav="마무리">
+    <div class="content">
+      <h2>마무리</h2>
+      <p>작가 소개와 연락처, 감사 문구가 들어갑니다.</p>
+    </div>
   </section>
 
-  <section class="section appendix" data-label="Appendix">
-    <h2>아이디어 발전 과정</h2>
-    <p>리서치, 스케치, 아이디어 발전 과정을 보여줍니다.</p>
-  </section>
-
-  <section class="section appendix" data-label="Appendix">
-    <h2>디자인 과정</h2>
-    <p>목업, 프로토타입, 재료 테스트 과정을 보여줍니다.</p>
+  <section class="section appendix" data-label="Appendix" data-nav="Appendix">
+    <div class="content">
+      <h2>Appendix</h2>
+      <h3>아이디어 발전 과정</h3>
+      <p>리서치, 스케치, 아이디어 발전 과정을 보여줍니다.</p>
+      <h3>디자인 과정</h3>
+      <p>목업, 프로토타입, 재료 테스트 과정을 보여줍니다.</p>
+    </div>
   </section>
 </div>
 
 <div id="dots"></div>
-<div class="hint">← swipe →</div>
 
 <script src="app.js"></script>
 </body>
