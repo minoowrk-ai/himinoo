@@ -43,9 +43,15 @@ sections.forEach((section, i) => {
   }
 });
 const dots = Array.from(dotsContainer.children);
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+prevBtn.addEventListener('click', () => goTo(currentIndex() - 1));
+nextBtn.addEventListener('click', () => goTo(currentIndex() + 1));
 
 function setActive() {
   const index = currentIndex();
+  prevBtn.classList.toggle('hidden', index === 0);
+  nextBtn.classList.toggle('hidden', index === sections.length - 1);
   dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
   navButtons.forEach((btn, i) => {
     if (!btn) return;
