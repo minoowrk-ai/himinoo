@@ -2,9 +2,14 @@ const pager = document.getElementById('pager');
 const sections = Array.from(pager.querySelectorAll('.section'));
 const dotsContainer = document.getElementById('dots');
 
-sections.forEach((_, i) => {
+sections.forEach((section, i) => {
+  const label = document.createElement('div');
+  label.className = 'index';
+  label.textContent = `${String(i + 1).padStart(2, '0')} / ${String(sections.length).padStart(2, '0')} · ${section.dataset.label}`;
+  section.prepend(label);
+
   const dot = document.createElement('div');
-  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.className = 'dot' + (i === 0 ? ' active' : '') + (section.classList.contains('appendix') ? ' appendix' : '');
   dotsContainer.appendChild(dot);
 });
 const dots = Array.from(dotsContainer.children);

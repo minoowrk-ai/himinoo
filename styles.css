@@ -96,6 +96,10 @@ html, body {
   transition: background 0.2s, transform 0.2s;
 }
 
+.dot.appendix {
+  border-radius: 2px;
+}
+
 .dot.active {
   background: var(--fg);
   transform: scale(1.3);
