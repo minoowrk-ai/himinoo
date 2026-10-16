@@ -1,10 +1,12 @@
-const CACHE_NAME = 'exhibit-cache-v5';
+const CACHE_NAME = 'exhibit-cache-v6';
 const ASSETS = [
   './',
   './index.html',
   './styles.css',
   './app.js',
-  './manifest.json'
+  './manifest.json',
+  './images/logo-full.svg',
+  './images/logo-wordmark.svg'
 ];
 
 self.addEventListener('install', (event) => {
