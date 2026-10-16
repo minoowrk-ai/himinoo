@@ -25,20 +25,21 @@ const navList = document.createElement('div');
 navList.className = 'nav-list';
 nav.appendChild(navList);
 
-const navButtons = [];
+const navByLabel = new Map();
 
 sections.forEach((section, i) => {
   const dot = document.createElement('div');
   dot.className = 'dot' + (i === 0 ? ' active' : '') + (section.classList.contains('appendix') ? ' appendix' : '');
   dotsContainer.appendChild(dot);
 
-  if (section.dataset.nav) {
+  const label = section.dataset.nav;
+  if (label && !navByLabel.has(label)) {
     const btn = document.createElement('button');
     btn.className = 'nav-item';
-    btn.textContent = section.dataset.nav;
+    btn.textContent = label;
     btn.addEventListener('click', () => goTo(i));
     navList.appendChild(btn);
-    navButtons[i] = btn;
+    navByLabel.set(label, btn);
   }
 });
 const dots = Array.from(dotsContainer.children);
@@ -52,9 +53,9 @@ function setActive() {
   prevBtn.classList.toggle('hidden', index === 0);
   nextBtn.classList.toggle('hidden', index === sections.length - 1);
   dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
-  navButtons.forEach((btn, i) => {
-    if (!btn) return;
-    const active = i === index;
+  const activeLabel = sections[index].dataset.nav;
+  navByLabel.forEach((btn, label) => {
+    const active = label === activeLabel;
     btn.classList.toggle('active', active);
     if (active) btn.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
   });
