@@ -16,7 +16,7 @@
 <nav id="nav" aria-label="섹션 이동"></nav>
 
 <div id="pager">
-  <section class="section" data-label="Cover">
+  <section class="section cover" data-label="Cover">
     <div class="content">
       <h1 class="cover-logo"><img src="images/logo-wordmark.svg" alt="GRADIA"></h1>
       <p class="cover-intro">GRADIA는 공황 및 불안 증상을 경험하는 사람이 치료 이후에도 일상 속에서 자신의 회복을 이어갈 수 있도록 돕는 회복 가이드 시스템입니다. 병원에서 배운 회복의 방식이 치료실 밖에서도 지속될 수 있도록, 사용자의 상태와 회복 과정에 맞춰 적절한 개입을 제공합니다.</p>
@@ -25,39 +25,78 @@
 
   <section class="section" data-label="Background" data-nav="Background">
     <div class="content">
-      <h2>Background / Problem</h2>
-      <p>이 제품을 왜 만들었는지, 어떤 문제를 풀려고 했는지 설명합니다. 내용이 길어지면 이 영역 안에서 위아래로 스크롤할 수 있습니다.</p>
+      <header class="page-head">
+        <h2>공황 장애 환자의 증가</h2>
+        <div class="desc">
+          <p>매년 공황장애 환자들은 증가하는 추세입니다. 2017년 공황 장애 환자 수는 15만명이였지만, 2023년 공황장애 환자 수는 약 25만명에 육박해 6년 사이 1.7배나 증가하였습니다.</p>
+          <p>또한 10대 불안장애 환자는 2020년 대비 65% 급증하였습니다.</p>
+        </div>
+      </header>
+
+      <div class="bento">
+        <article class="card card-blue">
+          <div class="card-text">Panic disorder patients grew <mark>1.7×</mark> in six years.</div>
+          <div class="bars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        </article>
+
+        <article class="card card-dark">
+          <div class="card-text">From 150K in 2017 to <span class="muted">nearly 250K</span> in 2023.</div>
+          <div class="ring" aria-hidden="true"></div>
+        </article>
+
+        <article class="card card-photo">
+          <img src="images/background-corridor.webp" alt="붐비는 복도에서 불안한 표정으로 뒤를 돌아보는 여성">
+          <div class="mosaic" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="card-text small">Teen anxiety cases up <mark>65%</mark> since 2020.</div>
+        </article>
+      </div>
     </div>
   </section>
 
   <section class="section" data-label="Product" data-nav="Product">
     <div class="content">
-      <h2>Product</h2>
-      <p>완성품 사진과 스펙(크기, 재료, 컬러)이 들어갑니다.</p>
+      <header class="page-head">
+        <h2>Product</h2>
+        <div class="desc">
+          <p>완성품 사진과 스펙(크기, 재료, 컬러)이 들어갑니다.</p>
+        </div>
+      </header>
     </div>
   </section>
 
   <section class="section" data-label="Branding" data-nav="Branding">
     <div class="content">
-      <h2>Branding</h2>
-      <p>브랜드 네임, 로고, 컬러, 패키지 등을 소개합니다.</p>
+      <header class="page-head">
+        <h2>Branding</h2>
+        <div class="desc">
+          <p>브랜드 네임, 로고, 컬러, 패키지 등을 소개합니다.</p>
+        </div>
+      </header>
     </div>
   </section>
 
   <section class="section" data-label="UX" data-nav="UX">
     <div class="content">
-      <h2>UX</h2>
-      <p>사용 시나리오와 사용자 경험을 소개합니다.</p>
+      <header class="page-head">
+        <h2>UX</h2>
+        <div class="desc">
+          <p>사용 시나리오와 사용자 경험을 소개합니다.</p>
+        </div>
+      </header>
     </div>
   </section>
 
   <section class="section appendix" data-label="Appendix" data-nav="Appendix">
     <div class="content">
-      <h2>Appendix</h2>
-      <h3>Idea Development</h3>
-      <p>리서치, 스케치, 아이디어 발전 과정을 보여줍니다.</p>
-      <h3>Design Process</h3>
-      <p>목업, 프로토타입, 재료 테스트 과정을 보여줍니다.</p>
+      <header class="page-head">
+        <h2>Appendix</h2>
+        <div class="desc">
+          <h3>Idea Development</h3>
+          <p>리서치, 스케치, 아이디어 발전 과정을 보여줍니다.</p>
+          <h3>Design Process</h3>
+          <p>목업, 프로토타입, 재료 테스트 과정을 보여줍니다.</p>
+        </div>
+      </header>
     </div>
   </section>
 </div>

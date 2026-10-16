@@ -28,11 +28,6 @@ nav.appendChild(navList);
 const navButtons = [];
 
 sections.forEach((section, i) => {
-  const label = document.createElement('div');
-  label.className = 'index';
-  label.textContent = `${String(i + 1).padStart(2, '0')} / ${String(sections.length).padStart(2, '0')} · ${section.dataset.label}`;
-  section.querySelector('.content').prepend(label);
-
   const dot = document.createElement('div');
   dot.className = 'dot' + (i === 0 ? ' active' : '') + (section.classList.contains('appendix') ? ' appendix' : '');
   dotsContainer.appendChild(dot);

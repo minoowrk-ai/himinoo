@@ -115,11 +115,15 @@ button {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   padding:
-    calc(var(--nav-h) + env(safe-area-inset-top, 0px) + clamp(48px, 12vh, 140px))
+    calc(var(--nav-h) + env(safe-area-inset-top, 0px) + clamp(20px, 4vh, 40px))
     var(--gutter)
     calc(clamp(56px, 10vh, 96px) + env(safe-area-inset-bottom, 0px));
   display: flex;
   flex-direction: column;
+}
+
+.section.cover {
+  padding-top: calc(var(--nav-h) + env(safe-area-inset-top, 0px) + clamp(48px, 12vh, 140px));
 }
 
 .section::-webkit-scrollbar {
@@ -129,27 +133,26 @@ button {
 .content {
   margin-block: 0 auto;
   width: 100%;
-  max-width: 1100px;
-}
-
-.index {
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  opacity: 0.5;
-  margin-bottom: 20px;
+  max-width: 1280px;
 }
 
 .section h2 {
-  font-size: clamp(28px, 5vw, 56px);
-  margin: 0 0 24px;
+  font-size: clamp(22px, 2.6vw, 32px);
+  line-height: 1.3;
+  margin: 0;
   font-weight: 700;
+  word-break: keep-all;
   text-wrap: balance;
 }
 
 .section h3 {
-  font-size: clamp(20px, 3vw, 32px);
-  margin: 48px 0 16px;
+  font-size: clamp(17px, 1.9vw, 22px);
+  margin: 28px 0 8px;
   font-weight: 600;
+}
+
+.section h3:first-child {
+  margin-top: 0;
 }
 
 .section p {
@@ -239,4 +242,171 @@ button {
   display: block;
   width: clamp(110px, 20vw, 260px);
   height: auto;
+}
+
+.page-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: start;
+  margin-bottom: clamp(24px, 5vh, 48px);
+}
+
+.page-head .desc p {
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 1.75;
+  margin: 0 0 0.6em;
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 20px);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: clamp(20px, 2.4vw, 32px);
+  min-height: clamp(180px, 26vh, 280px);
+  color: #fff;
+}
+
+.card-text {
+  position: relative;
+  z-index: 2;
+  padding: clamp(20px, 3vw, 40px);
+  font-size: clamp(24px, 3.3vw, 44px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.card-text.small {
+  font-size: clamp(18px, 2.2vw, 28px);
+}
+
+.card-text mark {
+  display: inline-block;
+  padding: 0 0.22em;
+  border-radius: 0.3em;
+  background: rgba(255, 255, 255, 0.92);
+  color: #3a86ad;
+  font-weight: 500;
+}
+
+.card-blue {
+  grid-row: span 2;
+  background:
+    radial-gradient(70% 40% at 50% 48%, rgba(86, 156, 196, 0.65), transparent 72%),
+    linear-gradient(180deg, #8ac6e2, #9dd1e8);
+}
+
+.bars {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 48%;
+  display: flex;
+  align-items: flex-end;
+  gap: 4%;
+  padding: 0 4%;
+}
+
+.bars span {
+  flex: 1;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.25));
+}
+
+.bars span:nth-child(1) { height: 55%; }
+.bars span:nth-child(2) { height: 100%; }
+.bars span:nth-child(3) { height: 70%; }
+.bars span:nth-child(4) { height: 88%; }
+.bars span:nth-child(5) { height: 62%; }
+
+.card-dark {
+  background: #262833;
+}
+
+.card-dark .muted {
+  color: #707c8c;
+}
+
+.ring {
+  position: absolute;
+  right: -7%;
+  bottom: -34%;
+  width: 34%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #e8ecf2;
+}
+
+.ring::after {
+  content: "";
+  position: absolute;
+  left: 26%;
+  top: 12%;
+  width: 48%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #262833;
+}
+
+.card-photo {
+  background: #1d2733;
+}
+
+.card-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(10, 20, 35, 0.6), transparent 60%);
+}
+
+.section .card-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 48% 40%;
+}
+
+.mosaic {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 42%;
+  height: 52%;
+  z-index: 1;
+}
+
+.mosaic span {
+  position: absolute;
+  border-radius: 18px;
+  background: rgba(132, 164, 206, 0.62);
+  -webkit-backdrop-filter: saturate(0.4);
+  backdrop-filter: saturate(0.4);
+}
+
+.mosaic span:nth-child(1) { right: 0; bottom: 0; width: 46%; height: 52%; }
+.mosaic span:nth-child(2) { right: 50%; bottom: 52%; width: 38%; height: 44%; }
+.mosaic span:nth-child(3) { right: 12%; bottom: 56%; width: 26%; height: 36%; background: rgba(40, 52, 70, 0.55); }
+
+@media (max-width: 700px) {
+  .page-head,
+  .bento {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .card-blue {
+    grid-row: auto;
+    min-height: 320px;
+  }
 }
