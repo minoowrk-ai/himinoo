@@ -1,4 +1,4 @@
-const CACHE_NAME = 'exhibit-cache-v6';
+const CACHE_NAME = 'exhibit-cache-v7';
 const ASSETS = [
   './',
   './index.html',
