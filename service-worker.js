@@ -1,4 +1,4 @@
-const CACHE_NAME = 'exhibit-cache-v9';
+const CACHE_NAME = 'exhibit-cache-v10';
 const ASSETS = [
   './',
   './index.html',
@@ -7,7 +7,9 @@ const ASSETS = [
   './manifest.json',
   './images/logo-full.svg',
   './images/logo-wordmark.svg',
-  './images/background-corridor.webp'
+  './images/background-corridor.webp',
+  './images/exposure-platform.webp',
+  './images/exposure-busstop.webp'
 ];
 
 self.addEventListener('install', (event) => {
