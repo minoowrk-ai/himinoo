@@ -13,7 +13,11 @@ function currentIndex() {
 
 const home = document.createElement('button');
 home.className = 'nav-home';
-home.textContent = '작품 이름';
+const logo = document.createElement('img');
+logo.src = 'images/logo-full.svg';
+logo.alt = 'GRADIA';
+home.setAttribute('aria-label', 'GRADIA, 처음으로');
+home.appendChild(logo);
 home.addEventListener('click', () => goTo(0));
 nav.appendChild(home);
 
