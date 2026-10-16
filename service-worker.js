@@ -1,4 +1,4 @@
-const CACHE_NAME = 'exhibit-cache-v11';
+const CACHE_NAME = 'exhibit-cache-v12';
 const MEDIA_CACHE = 'exhibit-media-v1';
 const ASSETS = [
   './',
@@ -11,7 +11,8 @@ const ASSETS = [
   './images/brand-symbol.svg',
   './images/background-corridor.webp',
   './images/exposure-platform.webp',
-  './images/exposure-busstop.webp'
+  './images/exposure-busstop.webp',
+  './images/cover-ar.webp'
 ];
 const MEDIA = ['./videos/product.mp4'];
 

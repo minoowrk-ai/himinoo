@@ -29,7 +29,7 @@ const navByLabel = new Map();
 
 sections.forEach((section, i) => {
   const dot = document.createElement('div');
-  dot.className = 'dot' + (i === 0 ? ' active' : '') + (section.classList.contains('appendix') ? ' appendix' : '');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
   dotsContainer.appendChild(dot);
 
   const label = section.dataset.nav;
