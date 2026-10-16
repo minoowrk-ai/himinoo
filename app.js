@@ -78,6 +78,26 @@ window.addEventListener('resize', () => {
   }, 100);
 });
 
+const features = Array.from(document.querySelectorAll('.feature'));
+
+function activateFeature(target) {
+  features.forEach((feature) => {
+    const on = feature === target;
+    feature.classList.toggle('active', on);
+    feature.setAttribute('aria-pressed', String(on));
+  });
+}
+
+features.forEach((feature) => {
+  feature.addEventListener('click', () => activateFeature(feature));
+  feature.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      activateFeature(feature);
+    }
+  });
+});
+
 document.addEventListener('keydown', (e) => {
   const current = currentIndex();
   if (e.key === 'ArrowRight' && current < sections.length - 1) goTo(current + 1);
