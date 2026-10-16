@@ -237,6 +237,6 @@ button {
 
 .cover-logo img {
   display: block;
-  width: clamp(220px, 40vw, 520px);
+  width: clamp(110px, 20vw, 260px);
   height: auto;
 }

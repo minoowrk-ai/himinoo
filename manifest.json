@@ -1,6 +1,6 @@
 {
-  "name": "전시 가이드",
-  "short_name": "전시가이드",
+  "name": "GRADIA",
+  "short_name": "GRADIA",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
