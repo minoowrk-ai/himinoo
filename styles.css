@@ -519,7 +519,7 @@ button {
   justify-content: space-between;
   align-items: flex-start;
   gap: 8px;
-  margin: 0 0 10px;
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
   font-size: clamp(20px, 2.4vw, 30px);
   font-weight: 800;
   line-height: 1.1;
@@ -534,7 +534,7 @@ button {
 }
 
 .feature-sub {
-  margin-bottom: 8px;
+  margin-bottom: clamp(18px, 2.2vw, 28px);
   font-size: clamp(15px, 1.55vw, 19px);
   font-weight: 700;
   line-height: 1.35;
