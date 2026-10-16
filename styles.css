@@ -115,9 +115,9 @@ button {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   padding:
-    calc(var(--nav-h) + env(safe-area-inset-top, 0px) + clamp(20px, 4vh, 40px))
+    calc(var(--nav-h) + env(safe-area-inset-top, 0px) + clamp(32px, 6vh, 64px))
     var(--gutter)
-    calc(clamp(56px, 10vh, 96px) + env(safe-area-inset-bottom, 0px));
+    calc(clamp(56px, 8vh, 80px) + env(safe-area-inset-bottom, 0px));
   display: flex;
   flex-direction: column;
 }
@@ -127,7 +127,9 @@ button {
 }
 
 .content {
-  margin-block: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
   width: 100%;
   max-width: 1280px;
 }
@@ -243,7 +245,8 @@ button {
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   gap: clamp(24px, 5vw, 72px);
   align-items: start;
-  margin-bottom: clamp(24px, 5vh, 48px);
+  flex: none;
+  margin-bottom: clamp(28px, 6vh, 56px);
 }
 
 .page-head .desc p {
@@ -256,14 +259,18 @@ button {
 .bento {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: clamp(12px, 1.6vw, 20px);
+  flex: 1 1 0px;
+  min-height: 380px;
+  max-height: 760px;
 }
 
 .card {
   position: relative;
   overflow: hidden;
   border-radius: clamp(20px, 2.4vw, 32px);
-  min-height: clamp(180px, 26vh, 280px);
+  min-height: 0;
   color: #fff;
 }
 
@@ -411,7 +418,9 @@ button {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
   gap: clamp(12px, 1.6vw, 20px);
-  height: clamp(260px, 54vh, 540px);
+  flex: 1 1 0px;
+  min-height: 240px;
+  max-height: 760px;
 }
 
 .photo {
@@ -463,7 +472,9 @@ button {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(12px, 1.6vw, 20px);
-  height: clamp(340px, 52vh, 520px);
+  flex: 1 1 0px;
+  min-height: 380px;
+  max-height: 760px;
 }
 
 .feature {
@@ -630,9 +641,9 @@ button {
 
 .section.video-page {
   padding:
-    calc(var(--nav-h) + env(safe-area-inset-top, 0px) + 12px)
+    calc(var(--nav-h) + env(safe-area-inset-top, 0px) + 20px)
     clamp(20px, 3vw, 36px)
-    calc(44px + env(safe-area-inset-bottom, 0px));
+    calc(56px + env(safe-area-inset-bottom, 0px));
 }
 
 .video-page .content {
@@ -644,8 +655,9 @@ button {
 
 .video-frame {
   position: relative;
+  flex: 1 1 0px;
+  min-height: 0;
   width: 100%;
-  height: 100%;
   overflow: hidden;
   border-radius: clamp(20px, 2.4vw, 32px);
   background: #f1f1f1;
@@ -666,7 +678,9 @@ button {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
   gap: clamp(12px, 1.6vw, 20px);
-  height: clamp(300px, 52vh, 520px);
+  flex: 1 1 0px;
+  min-height: 260px;
+  max-height: 760px;
 }
 
 .logo-panel {
@@ -832,7 +846,9 @@ button {
 .palette {
   display: grid;
   grid-template-columns: minmax(0, 1fr) clamp(120px, 20%, 220px);
-  height: clamp(300px, 52vh, 520px);
+  flex: 1 1 0px;
+  min-height: 300px;
+  max-height: 760px;
   overflow: hidden;
   border-radius: clamp(20px, 2.4vw, 32px);
 }
@@ -903,7 +919,9 @@ button {
 }
 
 .cover-photo {
-  height: clamp(300px, 52vh, 520px);
+  flex: 1 1 0px;
+  min-height: 220px;
+  max-height: 760px;
 }
 
 .cover-photo img {
