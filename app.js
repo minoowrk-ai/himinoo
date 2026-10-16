@@ -48,11 +48,25 @@ const nextBtn = document.getElementById('next');
 prevBtn.addEventListener('click', () => goTo(currentIndex() - 1));
 nextBtn.addEventListener('click', () => goTo(currentIndex() + 1));
 
+const video = document.querySelector('.video-el');
+const videoSection = video ? video.closest('.section') : null;
+
+function syncVideo() {
+  if (!video) return;
+  if (sections[currentIndex()] === videoSection) {
+    const playing = video.play();
+    if (playing) playing.catch(() => {});
+  } else {
+    video.pause();
+  }
+}
+
 function setActive() {
   const index = currentIndex();
   prevBtn.classList.toggle('hidden', index === 0);
   nextBtn.classList.toggle('hidden', index === sections.length - 1);
   dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+  syncVideo();
   const activeLabel = sections[index].dataset.nav;
   navByLabel.forEach((btn, label) => {
     const active = label === activeLabel;
@@ -103,6 +117,8 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight' && current < sections.length - 1) goTo(current + 1);
   else if (e.key === 'ArrowLeft' && current > 0) goTo(current - 1);
 });
+
+document.addEventListener('pointerdown', syncVideo);
 
 setActive();
 
