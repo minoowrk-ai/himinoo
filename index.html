@@ -205,32 +205,27 @@
   <section class="section" data-label="Branding" data-nav="Branding">
     <div class="content">
       <header class="page-head">
-        <h2>Color System</h2>
+        <div class="head-title">
+          <span class="eyebrow">Color</span>
+          <h2>회복의 흐름을 잇는 그라디언트</h2>
+        </div>
         <div class="desc">
-          <p>시안 계열의 그라데이션과 차분한 차콜(#242424)로 구성한 GRADIA의 컬러 시스템입니다. 밝은 Mist에서 깊은 Deep Teal로 이어지는 그라데이션이 브랜드의 기본 톤을 만듭니다.</p>
+          <p>GRADIA는 맑은 Mist에서 깊은 Deep Teal로 이어지는 그라디언트 컬러 시스템을 사용합니다. 밝은 시안은 회복이 시작되는 순간의 가벼움을, 깊은 청록은 일상에서 쌓이는 안정감을 나타냅니다. 차분한 Charcoal(#242424)은 이 흐름의 기준점이 됩니다.</p>
         </div>
       </header>
 
-      <div class="color-layout">
-        <div class="gradient-card">
-          <div class="gradient-meta gradient-meta-top"><span>BRAND GRADIENT</span><span>LINEAR 180°</span></div>
-          <ul class="stops">
-            <li class="stop" style="--p:0%"><span class="pct">0%</span><i style="background:#DDF9FF"></i><span class="hex">DDF9FF</span><span class="alpha">100 %</span></li>
-            <li class="stop" style="--p:52%"><span class="pct">52%</span><i style="background:#39C9E5"></i><span class="hex">39C9E5</span><span class="alpha">100 %</span></li>
-            <li class="stop" style="--p:100%"><span class="pct">100%</span><i style="background:#1E6877"></i><span class="hex">1E6877</span><span class="alpha">100 %</span></li>
-          </ul>
+      <div class="palette">
+        <div class="bands">
+          <div class="band" style="background:#242424;color:#fff"><span class="band-name">CHARCOAL</span><span class="band-hex">HEX: 242424</span></div>
+          <div class="band" style="background:#39C9E5;color:#242424"><span class="band-name">AQUA</span><span class="band-hex">HEX: 39C9E5</span></div>
+          <div class="band" style="background:#DDF9FF;color:#242424"><span class="band-name">MIST</span><span class="band-hex">HEX: DDF9FF</span></div>
+          <div class="band" style="background:#1E6877;color:#fff"><span class="band-name">DEEP TEAL</span><span class="band-hex">HEX: 1E6877</span></div>
         </div>
-
-        <div class="swatches">
-          <div class="chip chip-mist"><span class="role">SURFACE</span><div><div class="name">Mist</div><div class="code">#DDF9FF</div><div class="rgb">RGB 221 · 249 · 255</div></div></div>
-          <div class="chip chip-aqua"><span class="role">PRIMARY</span><div><div class="name">Aqua</div><div class="code">#39C9E5</div><div class="rgb">RGB 57 · 201 · 229</div></div></div>
-          <div class="chip chip-teal"><span class="role">DEPTH</span><div><div class="name">Deep Teal</div><div class="code">#1E6877</div><div class="rgb">RGB 30 · 104 · 119</div></div></div>
-          <div class="chip chip-charcoal"><span class="role">BASE</span><div><div class="name">Charcoal</div><div class="code">#242424</div><div class="rgb">RGB 36 · 36 · 36</div></div></div>
-          <div class="ratio" aria-label="컬러 사용 비율">
-            <span style="flex:40;background:#242424;color:#fff">Charcoal 40</span>
-            <span style="flex:25;background:#39C9E5;color:#242424">Aqua 25</span>
-            <span style="flex:20;background:#DDF9FF;color:#242424">Mist 20</span>
-            <span style="flex:15;background:#1E6877;color:#fff">Teal 15</span>
+        <div class="spectrum" aria-label="브랜드 그라디언트">
+          <div class="spectrum-stops">
+            <span class="spectrum-stop" style="--p:0%;color:#242424">0% · DDF9FF</span>
+            <span class="spectrum-stop" style="--p:52%;color:#242424">52% · 39C9E5</span>
+            <span class="spectrum-stop" style="--p:100%;color:#fff">100% · 1E6877</span>
           </div>
         </div>
       </div>
